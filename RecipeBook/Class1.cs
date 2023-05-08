@@ -289,6 +289,9 @@ namespace RecipeBook
         /// End of the method
         /// </summary>
 
+        /// <summary>
+        /// Start of method to clear arrays
+        /// </summary>
         public void ClearRecipe()
         {
             Array.Clear(IngredName, 0, IngredName.Length);
@@ -297,6 +300,9 @@ namespace RecipeBook
             Array.Clear(IngredSteps, 0, IngredSteps.Length);
             RequiredIngredients();
         }
+        /// <summary>
+        /// End of the method
+        /// </summary>
     }
 }
 /// <summary>
