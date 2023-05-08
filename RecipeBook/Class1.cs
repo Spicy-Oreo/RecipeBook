@@ -72,6 +72,7 @@ namespace RecipeBook
                         Console.WriteLine("Please enter the ingredient unit of measurement (e.g tablespoon/teaspoon)");
                         uMeasurement = Console.ReadLine();
                         IngredMeasurement[i] = uMeasurement;
+                        Instructions();
                     }
 
                 }
@@ -125,6 +126,7 @@ namespace RecipeBook
                         string stepDetails = Console.ReadLine();
                         IngredSteps[i] = stepDetails;
                     }
+                    Choice();
                 }
                 //else statment to restart the method if a number value was not entered 
                 else
