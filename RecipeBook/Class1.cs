@@ -143,6 +143,12 @@ namespace RecipeBook
         /// End of the method
         /// </summary>
 
+
+
+
+        /// <summary>
+        /// Method which allows user to increase scale of recipe or leave it as the original
+        /// </summary>
         public void Choice()
         {
             try
@@ -178,6 +184,15 @@ namespace RecipeBook
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// End of the method
+        /// </summary>
+
+
+
+
+
+
         /// <summary>
         /// Method used to print the recipe based on what it is scaled up by 
         /// </summary>
@@ -216,15 +231,40 @@ namespace RecipeBook
         /// <summary>
         /// End of method 
         /// </summary>
+        
+
+
+
+        /// <summary>
+        /// Method used to print the oringal recipe scale 
+        /// </summary>
+        public void PrintOriginal()
+        {
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Ingredients");
+            Console.WriteLine("-----------");
+            for (int i = 0; i < IngredName.Length; i++)
+            {
+                string IngredientNameHere = IngredName[i];
+                string IngredientMeasurementHere = IngredMeasurement[i];
+                double IngredientAmountHere = IngredAmount[i];
+                Console.WriteLine(IngredientAmountHere + " " + IngredientMeasurementHere + " " + IngredientNameHere);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Steps");
+            Console.WriteLine("-----");
+            for (int i = 0; i < IngredSteps.Length; i++)
+            {
+                Console.WriteLine("Step " + (i + 1) + ": " + IngredSteps[i]);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+        }
+        /// <summary>
+        /// End of the method
+        /// </summary>
 
     }
 }
-        /// <summary>
-        /// End of method 
-        /// </summary>
-
-
-
 /// <summary>
 /// Method used to allow the user to increase the scale of the recipe or print with the original details
 /// </summary>
