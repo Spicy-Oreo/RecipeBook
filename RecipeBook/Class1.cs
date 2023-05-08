@@ -178,6 +178,45 @@ namespace RecipeBook
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// Method used to print the recipe based on what it is scaled up by 
+        /// </summary>
+        public void PrintScaledUp()
+        {
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Ingredients");
+            Console.WriteLine("-----------");
+            for (int i = 0; i < IngredName.Length; i++)
+            {
+                string IngredientNameHere = IngredName[i];
+                string IngredientMeasurementHere = IngredMeasurement[i];
+                double IngredientAmountHere = (IngredAmount[i] * inputHere);
+                Console.WriteLine(IngredientAmountHere + " " + IngredientMeasurementHere + " " + IngredientNameHere);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Steps");
+            Console.WriteLine("-----");
+            for (int i = 0; i < IngredSteps.Length; i++)
+            {
+                Console.WriteLine("Step " + (i + 1) + ": " + IngredSteps[i]);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("");
+            Console.WriteLine("Would you like to return to the orignal values ? Enter 1 for yes or any other key to exit");
+            string originalInput = Console.ReadLine();
+            if (originalInput == "1")
+            {
+                PrintOriginal();
+            }
+            else
+            {
+                System.Environment.Exit(0);
+            }
+        }
+        /// <summary>
+        /// End of method 
+        /// </summary>
+
     }
 }
         /// <summary>
