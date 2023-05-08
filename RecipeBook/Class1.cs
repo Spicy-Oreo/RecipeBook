@@ -72,8 +72,9 @@ namespace RecipeBook
                         Console.WriteLine("Please enter the ingredient unit of measurement (e.g tablespoon/teaspoon)");
                         uMeasurement = Console.ReadLine();
                         IngredMeasurement[i] = uMeasurement;
-                        Instructions();
+                       
                     }
+                    Instructions();
 
                 }
 
