@@ -51,6 +51,7 @@ namespace RecipeBook
                     //Resizing all arrays based on the number of ingredients 
                     int size = numIngredients;
 
+                    //Resizing arrays based on how many ingredients there are
                     Array.Resize(ref IngredName, size);
                     Array.Resize(ref IngredAmount, size);
                     Array.Resize(ref IngredMeasurement, size);
@@ -74,6 +75,7 @@ namespace RecipeBook
                         IngredMeasurement[i] = uMeasurement;
                        
                     }
+                    //Calling of next method once it has finished loopinf through all the details 
                     Instructions();
 
                 }
