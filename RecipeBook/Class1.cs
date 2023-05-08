@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -160,7 +161,7 @@ namespace RecipeBook
             {
 
 
-                Console.WriteLine("Would you like to increase the scale ? Enter 1 for no or any other digit as the scale you want to increase the recipe by");
+                Console.WriteLine("Would you like to increase the scale ? Enter 1 for no or any other digit as the scale you want to increase the recipe by ");
                 string input = Console.ReadLine();
 
                 ///If user choses 1 it will print the original choice 
@@ -177,6 +178,7 @@ namespace RecipeBook
 
                 }
 
+              
                 //If the input is not a digit it will prompt the user of the error and re-run the method so the user can re-enter in the correct format (digit)
                 else
                 {
@@ -222,12 +224,19 @@ namespace RecipeBook
             }
             Console.WriteLine("------------------------------------------------------------------------------------------------");
             Console.WriteLine("");
-            Console.WriteLine("Would you like to return to the orignal values ? Enter 1 for yes or any other key to exit");
+            Console.WriteLine("Would you like to return to the orignal values ? Enter 1 for yes , 2 to clear recipes and reenter details  or any other key to exit");
             string originalInput = Console.ReadLine();
             if (originalInput == "1")
             {
                 PrintOriginal();
             }
+
+            if (originalInput == "2")
+            {
+                ClearRecipe();
+            }
+
+
             else
             {
                 System.Environment.Exit(0);
@@ -263,11 +272,31 @@ namespace RecipeBook
                 Console.WriteLine("Step " + (i + 1) + ": " + IngredSteps[i]);
             }
             Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Would you like to return to clear the recipe and start over or exit ? Enter 1 to exit or any other key to clear recipe and start over ");
+            string userInput = Console.ReadLine();
+
+            if (userInput == "1")
+            {
+                System.Environment.Exit(0);
+            }
+            else
+            {
+                ClearRecipe();
+            }
         }
         /// <summary>
         /// End of the method
         /// </summary>
 
+        public void ClearRecipe()
+        {
+            Array.Clear(IngredName, 0, IngredName.Length);
+            Array.Clear(IngredAmount, 0, IngredAmount.Length);
+            Array.Clear(IngredMeasurement, 0, IngredMeasurement.Length);
+            Array.Clear(IngredSteps, 0, IngredSteps.Length);
+            RequiredIngredients();
+        }
     }
 }
 /// <summary>
