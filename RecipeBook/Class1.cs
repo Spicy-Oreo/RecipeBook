@@ -54,6 +54,24 @@ namespace RecipeBook
                 uMeasurement = Console.ReadLine();
                 IngredMeasurement[i] = uMeasurement;
             }
+
+
+        }
+        public void Instructions()
+        {
+            Console.WriteLine("Please enter the number of steps");
+            usrNumSteps = Console.ReadLine();
+
+            numSteps = Convert.ToInt32(usrNumSteps);
+
+            Array.Resize(ref Steps, numSteps);
+
+            for (int i = 0; i < Steps.Length; i++)
+            {
+                Console.WriteLine("Please enter step " + (1 + i));
+                string stepDetails = Console.ReadLine();
+                Steps[i] = stepDetails;
+            }
         }
     }
 }
